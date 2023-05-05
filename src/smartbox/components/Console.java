@@ -1,11 +1,12 @@
 package smartbox.components;
 
+import smartbox.App;
+import smartbox.Component;
+
 import java.io.*;
-import smartbox.*;
 
 public class Console extends Component implements App {
 
-	private static final long serialVersionUID = 1L;
 	protected BufferedReader stdin;
 	protected PrintWriter stdout;
 	protected PrintWriter stderr;

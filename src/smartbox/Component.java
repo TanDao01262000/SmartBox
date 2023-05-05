@@ -9,7 +9,7 @@ public class Component implements Serializable {
 
     private Set<Class<?>> requiredInterfaces;
     private Set<Class<?>> providedInterfaces;
-    transient Map<Class<?>, Field> fields; // transient because Field not serializable
+    Map<Class<?>, Field> fields; // transient because Field not serializable
     protected Container container;
     protected String name;
 

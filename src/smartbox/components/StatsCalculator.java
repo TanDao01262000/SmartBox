@@ -1,13 +1,14 @@
 package smartbox.components;
 
-import java.util.*;
-import smartbox.*;
-import smartbox.mvc.Utilities;
+import smartbox.App;
+import smartbox.Component;
+import mvc.Utilities;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class StatsCalculator extends Component implements App {
 
-	private static final long serialVersionUID = 1L;
-	
 	public ICalculator arithmeticCalculator;
 
 	public Double mean(List<Double> data) throws Exception {
@@ -21,7 +22,6 @@ public class StatsCalculator extends Component implements App {
 	}
 
 	public void main() throws Exception {
-        //System.out.println("entering main");
 		List<Double> scores = new LinkedList<Double>();
 		for(int i = 0; i < 100; i++) {
 			scores.add((double)i);

@@ -1,10 +1,8 @@
 package smartbox.components;
 
-import smartbox.*;
+import smartbox.Component;
 
 public class Calculator extends Component implements ICalculator {
-
-	private static final long serialVersionUID = 1L;
 
 	public Double add(Double x, Double y) {
 		return x + y;
