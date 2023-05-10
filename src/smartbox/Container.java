@@ -86,18 +86,9 @@ public class Container extends Model {
     // needed by File/Open
     public void initSupport(){
         super.initSupport();
-
-        Iterator a = components.values().iterator();
-        while (a.hasNext()) {
-            Component b = (Component) a.next();
-            if (b.fields == null) {
-                b.fields = new HashMap<Class<?>, Field>();
-                b.computeProvidedInterfaces();
-                b.computeRequiredInterfaces();
-            }
-        }
+        for(Component c: components.values()) c.initSupport();
+        changed(); // needed?
     }
-
 
     public Collection<Component> getComponents() {
         return components.values();

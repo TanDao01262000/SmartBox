@@ -7,9 +7,9 @@ import java.io.*;
 
 public class Console extends Component implements App {
 
-	protected BufferedReader stdin;
-	protected PrintWriter stdout;
-	protected PrintWriter stderr;
+	protected transient BufferedReader stdin;
+	protected transient PrintWriter stdout;
+	protected transient PrintWriter stderr;
 
 	public CommandProcessor processor;
 

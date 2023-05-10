@@ -9,7 +9,7 @@ public class Component implements Serializable {
 
     private Set<Class<?>> requiredInterfaces;
     private Set<Class<?>> providedInterfaces;
-    Map<Class<?>, Field> fields; // transient because Field not serializable
+    transient Map<Class<?>, Field> fields; // transient because Field not serializable
     protected Container container;
     protected String name;
 
@@ -55,6 +55,13 @@ public class Component implements Serializable {
 
     public Set<Class<?>> getRequiredInterfaces() {
         return requiredInterfaces;
+    }
+
+    // needed by file/open
+    public void initSupport() {
+        fields = new HashMap<Class<?>, Field>();
+        computeProvidedInterfaces();
+        computeRequiredInterfaces();
     }
 
 }
