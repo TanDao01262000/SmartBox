@@ -86,8 +86,11 @@ public class Container extends Model {
     // needed by File/Open
     public void initSupport(){
         super.initSupport();
-        for(Component c: components.values()) c.initSupport();
+        for(Component c: components.values()){
+            c.initSupport();
+        }
         changed(); // needed?
+
     }
 
     public Collection<Component> getComponents() {

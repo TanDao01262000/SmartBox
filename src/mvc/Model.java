@@ -4,8 +4,10 @@ public class Model extends Bean {
     boolean unsavedChanges = false;
     String fileName        = null;
     public void changed() {
+
         unsavedChanges = true;
         firePropertyChange(null, null, null);
+        System.out.println("You called changed()");
         // inheringin classes shall add more
     }
 
